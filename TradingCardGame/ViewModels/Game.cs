@@ -11,7 +11,8 @@ namespace TradingCardGame.ViewModels
     {
         public Game()
         {
-            Turn = 1;
+            Random rnd = new Random();
+            Turn = rnd.Next(1,2);
         }
 
         /// <summary>
