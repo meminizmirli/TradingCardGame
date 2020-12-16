@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>TradingCardGame.Business</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TradingCardGame.Core\TradingCardGame.Core.csproj" />
+    <ProjectReference Include="..\TradingCardGame.Interface\TradingCardGame.Interface.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,242 @@
+[
+  {
+    "Id" : 1, 
+    "Name": "Card 1",
+    "ManaCost": 0,
+    "DamageCount": 0
+  },
+  {
+    "Id": 2,
+    "Name": "Card 2",
+    "ManaCost": 0,
+    "DamageCount": 0
+  },
+  {
+    "Id": 3,
+    "Name": "Card 3",
+    "ManaCost": 0,
+    "DamageCount": 0
+  },
+  {
+    "Id": 4,
+    "Name": "Card 4",
+    "ManaCost": 0,
+    "DamageCount": 0
+  },
+  {
+    "Id": 5,
+    "Name": "Card 5",
+    "ManaCost": 1,
+    "DamageCount": 1
+  },
+  {
+    "Id": 6,
+    "Name": "Card 6",
+    "ManaCost": 1,
+    "DamageCount": 1
+  },
+  {
+    "Id": 7,
+    "Name": "Card 7",
+    "ManaCost": 1,
+    "DamageCount": 1
+  },
+  {
+    "Id": 8,
+    "Name": "Card 8",
+    "ManaCost": 1,
+    "DamageCount": 1
+  },
+  {
+    "Id": 9,
+    "Name": "Card 9",
+    "ManaCost": 2,
+    "DamageCount": 2
+  },
+  {
+    "Id": 10,
+    "Name": "Card 10",
+    "ManaCost": 2,
+    "DamageCount": 2
+  },
+  {
+    "Id": 11,
+    "Name": "Card 11",
+    "ManaCost": 2,
+    "DamageCount": 2
+  },
+  {
+    "Id": 12,
+    "Name": "Card 12",
+    "ManaCost": 2,
+    "DamageCount": 2
+  },
+  {
+    "Id": 13,
+    "Name": "Card 13",
+    "ManaCost": 2,
+    "DamageCount": 2
+  },
+  {
+    "Id": 14,
+    "Name": "Card 14",
+    "ManaCost": 2,
+    "DamageCount": 2
+  },
+  {
+    "Id": 15,
+    "Name": "Card 15",
+    "ManaCost": 3,
+    "DamageCount": 3
+  },
+  {
+    "Id": 16,
+    "Name": "Card 16",
+    "ManaCost": 3,
+    "DamageCount": 3
+  },
+  {
+    "Id": 17,
+    "Name": "Card 17",
+    "ManaCost": 3,
+    "DamageCount": 3
+  },
+  {
+    "Id": 18,
+    "Name": "Card 18",
+    "ManaCost": 3,
+    "DamageCount": 3
+  },
+  {
+    "Id": 19,
+    "Name": "Card 19",
+    "ManaCost": 3,
+    "DamageCount": 3
+  },
+  {
+    "Id": 20,
+    "Name": "Card 20",
+    "ManaCost": 3,
+    "DamageCount": 3
+  },
+  {
+    "Id": 21,
+    "Name": "Card 21",
+    "ManaCost": 3,
+    "DamageCount": 3
+  },
+  {
+    "Id": 22,
+    "Name": "Card 22",
+    "ManaCost": 3,
+    "DamageCount": 3
+  },
+  {
+    "Id": 23,
+    "Name": "Card 23",
+    "ManaCost": 4,
+    "DamageCount": 4
+  },
+  {
+    "Id": 24,
+    "Name": "Card 24",
+    "ManaCost": 4,
+    "DamageCount": 4
+  },
+  {
+    "Id": 25,
+    "Name": "Card 25",
+    "ManaCost": 4,
+    "DamageCount": 4
+  },
+  {
+    "Id": 26,
+    "Name": "Card 26",
+    "ManaCost": 4,
+    "DamageCount": 4
+  },
+  {
+    "Id": 27,
+    "Name": "Card 27",
+    "ManaCost": 4,
+    "DamageCount": 4
+  },
+  {
+    "Id": 28,
+    "Name": "Card 28",
+    "ManaCost": 5,
+    "DamageCount": 5
+  },
+  {
+    "Id": 29,
+    "Name": "Card 29",
+    "ManaCost": 5,
+    "DamageCount": 5
+  },
+  {
+    "Id": 30,
+    "Name": "Card 30",
+    "ManaCost":5,
+    "DamageCount": 5
+  },
+  {
+    "Id": 31,
+    "Name": "Card 31",
+    "ManaCost": 5,
+    "DamageCount": 5
+  },
+  {
+    "Id": 32,
+    "Name": "Card 32",
+    "ManaCost": 5,
+    "DamageCount": 5
+  },
+  {
+    "Id": 33,
+    "Name": "Card 33",
+    "ManaCost": 6,
+    "DamageCount": 6
+  },
+  {
+    "Id": 34,
+    "Name": "Card 34",
+    "ManaCost": 6,
+    "DamageCount": 6
+  },
+  {
+    "Id": 35,
+    "Name": "Card 35",
+    "ManaCost": 6,
+    "DamageCount": 6
+  },
+  {
+    "Id": 36,
+    "Name": "Card 36",
+    "ManaCost": 6,
+    "DamageCount": 6
+  },
+  {
+    "Id": 37,
+    "Name": "Card 37",
+    "ManaCost": 7,
+    "DamageCount": 7
+  },
+  {
+    "Id": 38,
+    "Name": "Card 38",
+    "ManaCost": 7,
+    "DamageCount": 7
+  },
+  {
+    "Id": 39,
+    "Name": "Card 39",
+    "ManaCost": 8,
+    "DamageCount": 8
+  },
+  {
+    "Id": 40,
+    "Name": "Card 40",
+    "ManaCost": 8,
+    "DamageCount": 8
+  }
+]
