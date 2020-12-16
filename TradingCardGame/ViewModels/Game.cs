@@ -149,6 +149,9 @@ namespace TradingCardGame.ViewModels
             } while (continueTurn);
         }
 
+        /// <summary>
+        /// Yapay zeka otomatik olarak en iyi opsiyonla oynar.
+        /// </summary>
         public void AIPlayed()
         {
             Played.UpdateManaSlot();
@@ -195,6 +198,9 @@ namespace TradingCardGame.ViewModels
                                 break;
                         } while (true);
                     }
+
+                    var maxDamageCombination = playableCardsList.OrderByDescending(x => x.Value.Sum(y => y.DamageCount)).FirstOrDefault();
+                    selectedCards.AddRange(maxDamageCombination.Value);
                 }
 
                 selectedCards.ForEach(x =>
@@ -206,7 +212,8 @@ namespace TradingCardGame.ViewModels
 
                 Played.LastDamegeDone = selectedCards.Sum(x => x.DamageCount);
             }
-            Played.LastDamegeDone = 0;
+            else
+                Played.LastDamegeDone = 0;
         }
 
         public void Try(List<Card> selectableCards, int needManaCost, List<Card> playableCardsList)

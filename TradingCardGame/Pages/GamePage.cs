@@ -61,8 +61,10 @@ namespace TradingCardGame.Pages
             Console.WriteLine($"{game.PlayerOne.Account.Name} Canı {game.PlayerOne.Hp} - {game.PlayerTwo.Account.Name} Canı {game.PlayerTwo.Hp}");
             Console.WriteLine($"Kazanan Oyuncu {game.Winner.Name}");
 
-            _accountService.UpdateWinScore(game.Winner.Id);
-            _accountService.UpdateLoseScore(game.Losser.Id);
+            if(game.Winner.Id != 0)
+                _accountService.UpdateWinScore(game.Winner.Id);
+            if (game.Losser.Id != 0)
+                _accountService.UpdateLoseScore(game.Losser.Id);
         }
     }
 }
