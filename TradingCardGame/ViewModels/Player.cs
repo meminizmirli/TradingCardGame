@@ -66,7 +66,7 @@ namespace TradingCardGame.ViewModels
             var random = new Random();
             var drawingCard = PlayerCardDeck[random.Next(0, PlayerCardDeck.Count)];
             PlayerCardDeck.Remove(drawingCard);
-            if (PlayerHandCards.Count <= 5)
+            if (PlayerHandCards.Count < 5)
                 PlayerHandCards.Add(drawingCard);
         }
 

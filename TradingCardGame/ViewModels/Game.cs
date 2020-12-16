@@ -112,7 +112,7 @@ namespace TradingCardGame.ViewModels
             Played.UpdateManaSlot();
             Played.ManaCount = Played.ManaSlotCount;
             Console.Clear();
-            if (Turn > 1) Console.WriteLine($"Rakibiniz size toplam {Rival.LastDamegeDone} hasasr verdi");
+            if (Turn > 1) Console.WriteLine($"Rakibiniz size toplam {Rival.LastDamegeDone} hasar verdi");
             Console.WriteLine($"{Played.Account.Name} Sırası");
             Console.WriteLine("");
             Console.WriteLine($"Senin Canın {Played.Hp} - Rakibinin Canı {Rival.Hp}");
@@ -175,33 +175,35 @@ namespace TradingCardGame.ViewModels
                 else
                 {
                     var orderadCards = playableCards.OrderByDescending(x => x.ManaCost).ToList();
-
-                    var playableCardsList = new Dictionary<int, List<Card>>();
-                    var sayac = 0;
-                    for (var i = 0; i < orderadCards.Count; i++)
+                    if(orderadCards.Any())
                     {
-                        var selectedCard = orderadCards[i];
-                        playableCardsList.Add(sayac++, new List<Card> { selectedCard });
-                        if (selectedCard.ManaCost == Played.ManaCount)
-                            break;
-
-                        var needManaCost = Played.ManaCount - selectedCard.ManaCost;
-                        var selectableCards = orderadCards.Where(x => x.ManaCost <= needManaCost).ToList();
-                        do
+                        var playableCardsList = new Dictionary<int, List<Card>>();
+                        var sayac = 0;
+                        for (var i = 0; i < orderadCards.Count; i++)
                         {
-                            if (playableCardsList[i].Sum(x => x.ManaCost) == Played.ManaCount)
+                            var selectedCard = orderadCards[i];
+                            playableCardsList.Add(sayac++, new List<Card> {selectedCard});
+                            if (selectedCard.ManaCost == Played.ManaCount)
                                 break;
-                            if (selectableCards.Any())
-                            {
-                                Try(selectableCards, needManaCost, playableCardsList[i]);
-                            }
-                            else
-                                break;
-                        } while (true);
-                    }
 
-                    var maxDamageCombination = playableCardsList.OrderByDescending(x => x.Value.Sum(y => y.DamageCount)).FirstOrDefault();
-                    selectedCards.AddRange(maxDamageCombination.Value);
+                            var needManaCost = Played.ManaCount - selectedCard.ManaCost;
+                            var selectableCards = orderadCards.Where(x => x.ManaCost <= needManaCost).ToList();
+                            do
+                            {
+                                if (playableCardsList[i].Sum(x => x.ManaCost) == Played.ManaCount)
+                                    break;
+                                if (selectableCards.Any())
+                                {
+                                    Try(selectableCards, needManaCost, playableCardsList[i]);
+                                }
+                                else
+                                    break;
+                            } while (true);
+                        }
+
+                        var maxDamageCombination = playableCardsList.OrderByDescending(x => x.Value.Sum(y => y.DamageCount)).FirstOrDefault();
+                        selectedCards.AddRange(maxDamageCombination.Value);
+                    }
                 }
 
                 selectedCards.ForEach(x =>

@@ -1,5 +1,6 @@
 ﻿using System;
 using TradingCardGame.Business.Services;
+using TradingCardGame.Core.Extensions;
 using TradingCardGame.Interface.Models.GameModels;
 using TradingCardGame.Interface.Models.SocialModels;
 using TradingCardGame.Interface.ServiceInterfaces;
@@ -22,7 +23,7 @@ namespace TradingCardGame.Pages
         /// </summary>
         /// <param name="loginAccount"></param>
         /// <param name="rivalId"></param>
-        public void StartGame(Account loginAccount, int rivalId)
+        public bool StartGame(Account loginAccount, int rivalId)
         {
             var rivalAccount = _accountService.GetAccountById(rivalId) ?? new Account { Id = 0, Name = "Yapay Zeka" };
             var cardList = _gameService.GetCardList();
@@ -48,7 +49,13 @@ namespace TradingCardGame.Pages
                 game.Turn++;
             } while (game.PlayerOne.Hp > 0 && game.PlayerTwo.Hp > 0);
 
+            Console.Clear();
             Finish(game);
+
+            Console.Write("Tekrar lobiye dönmek için 1'e basınız: ");
+            var selectedIdString = Console.ReadLine();
+            Console.Clear();
+            return selectedIdString == "1";
         }
 
         /// <summary>
@@ -57,7 +64,6 @@ namespace TradingCardGame.Pages
         /// <param name="game"></param>
         private void Finish(Game game)
         {
-            Console.Clear();
             Console.WriteLine($"{game.PlayerOne.Account.Name} Canı {game.PlayerOne.Hp} - {game.PlayerTwo.Account.Name} Canı {game.PlayerTwo.Hp}");
             Console.WriteLine($"Kazanan Oyuncu {game.Winner.Name}");
 

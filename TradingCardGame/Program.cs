@@ -14,13 +14,19 @@ namespace TradingCardGame
     {
         private static Account _loginAccount;
         private static int _rivalId;
+        private static bool _returnLobby;
         static void Main(string[] args)
         {
             DependencyServices.RegisterService();
             IServiceScope scope = DependencyServices.ServiceProvider.CreateScope();
             _loginAccount = scope.ServiceProvider.GetRequiredService<AccountPage>().LoginOrRegister();
-            _rivalId = scope.ServiceProvider.GetRequiredService<LobbyPage>().OpenLobby(_loginAccount);
-            scope.ServiceProvider.GetRequiredService<GamePage>().StartGame(_loginAccount, _rivalId);
+            do
+            {
+                _rivalId = scope.ServiceProvider.GetRequiredService<LobbyPage>().OpenLobby(_loginAccount);
+                _returnLobby = scope.ServiceProvider.GetRequiredService<GamePage>().StartGame(_loginAccount, _rivalId);
+            } while (_returnLobby);
+
+            Console.Write("Hoşçakal..");
             DependencyServices.DisposeServices();
         }
     }
