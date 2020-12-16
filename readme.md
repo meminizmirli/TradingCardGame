@@ -2,6 +2,23 @@
 
 Case - Trading Card
 
+## Prerequirements
+
+* Visual Studio 2019
+* .NET Core v3.1
+
+## How To Run
+
+* Open solution in Visual Studio 2019
+* Set TradingCardGame project as Startup Project and build the project.
+* Run the application.
+
+## User Guide
+
+* First enter your username. If you have a user, you can login. If not, it will be created automatically.
+* You will encounter Json registered users and artificial intelligence. You can play against it by choosing one of them.
+* Played sequentially if you choose the user. If you choose artificial intelligence, it will automatically make its moves.
+
 ## Getting Started
 
 **REQUIREMENTS**
