@@ -144,8 +144,8 @@ namespace TradingCardGame.ViewModels
                 }
                 else
                 {
-                    var selectedCardId = SelectedCard();
-                    PlayedCard(selectedCardId);
+                    var selectedManaCost = SelectedCard();
+                    PlayedCard(selectedManaCost);
                 }
             } while (continueTurn);
         }
@@ -242,8 +242,7 @@ namespace TradingCardGame.ViewModels
                 var idText = x.Id.ToString();
                 var manaCostText = x.ManaCost.ToString();
                 var damageCountText = x.DamageCount.ToString();
-                Console.WriteLine($"{idText.PadRight(4 - idText.Length, ' ')} - " +
-                                  $"{x.Name.PadRight(10 - x.Name.ToString().Length, ' ')} - " +
+                Console.WriteLine($"{x.Name.PadRight(10 - x.Name.ToString().Length, ' ')} - " +
                                   $"Mana İhtiyacı {manaCostText.PadRight(4 - manaCostText.Length, ' ')} - " +
                                   $"Hasarı {damageCountText.PadRight(4 - damageCountText.Length, ' ')}");
             });
@@ -259,7 +258,7 @@ namespace TradingCardGame.ViewModels
             Console.WriteLine("");
             var unSuccessful = true;
             var showError = false;
-            var selectedId = 0;
+            var selectedManaCost = 0;
             do
             {
                 if (showError)
@@ -267,11 +266,11 @@ namespace TradingCardGame.ViewModels
                     GeneralExtensions.ClearLine();
                     Console.WriteLine("Seçimi Hatalı Yaptınız!!");
                 }
-                Console.Write("Oynamak istediğin kartın başında bulunan sayıyı yaz: ");
+                Console.Write("Oynamak istediğin kartın Mana miktarını yazınız: ");
                 var selectedIdString = Console.ReadLine();
-                if (int.TryParse(selectedIdString, out selectedId))
+                if (int.TryParse(selectedIdString, out selectedManaCost))
                 {
-                    if (selectedId == 0 || Played.PlayerHandCards.Any(x => x.Id == selectedId))
+                    if (selectedManaCost == 0 || Played.PlayerHandCards.Any(x => x.ManaCost == selectedManaCost))
                         unSuccessful = false;
                     else showError = true;
                 }
@@ -280,16 +279,16 @@ namespace TradingCardGame.ViewModels
                 GeneralExtensions.ClearLine();
             } while (unSuccessful);
 
-            return selectedId;
+            return selectedManaCost;
         }
 
         /// <summary>
         /// Id ye göre seçilen kartı oynanabilirse oynatır
         /// </summary>
         /// <param name="id"></param>
-        public void PlayedCard(int id)
+        public void PlayedCard(int manaCost)
         {
-            var selectedCard = Played.PlayerHandCards.First(x => x.Id == id);
+            var selectedCard = Played.PlayerHandCards.First(x => x.ManaCost == manaCost);
             if (Played.ManaCount < selectedCard.ManaCost)
             {
                 GeneralExtensions.ClearLine();
